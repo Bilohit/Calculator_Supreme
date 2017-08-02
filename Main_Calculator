@@ -1,0 +1,130 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int num1 = 0;
+    int num2 = 0;
+    int num3 = 0;
+    int num4 = 0;
+    int num5 = 0;
+    int res = 0;
+    char oprt;
+    char exit = 'n';
+    do
+    {
+
+        printf("Enter Operation \n");
+        printf("(ADD-A|SUBTRACT-S|MULTIPLY-M|DIVIDE-D|MODULUS-m|POWER-P|LOGARITHM-L)\n");
+        scanf ("%c",&oprt);
+        while ( oprt != 'a' && oprt != 'A' &&
+                oprt != 's' && oprt != 'S' &&
+                oprt != 'm' && oprt != 'M' &&
+                oprt != 'd' && oprt != 'D' &&
+                oprt != 'p' && oprt != 'P' &&
+                oprt != 'l' && oprt != 'L'   )
+        {
+            scanf ("%c",&oprt);
+        }
+        switch(oprt)
+        {
+            case 'a':
+            case 'A':
+            {
+        printf("Enter First Number \n");
+        scanf ("%d",&num1);
+        printf("Enter Second Number \n");
+        scanf ("%d",&num2);
+                res=num1+num2;
+                printf("The SUM of %d & %d = %d \n",num1,num2,res);
+                break;
+
+            }
+            case 's':
+            case 'S':
+            {
+        printf("Enter First Number \n");
+        scanf ("%d",&num1);
+        printf("Enter Second Number \n");
+        scanf ("%d",&num2);
+                res=num1-num2;
+                printf("The DIFFERRENCE of %d & %d = %d \n",num1,num2,res);
+                break;
+            }
+            case 'M':
+            {
+        printf("Enter First Number \n");
+        scanf ("%d",&num1);
+        printf("Enter Second Number \n");
+        scanf ("%d",&num2);
+                res=num1*num2;
+                printf("The PRODUCT of %d & %d = %d \n",num1,num2,res);
+                break;
+            }
+            case 'd':
+            case 'D':
+            {
+                if ( num2 == 0 )
+                {
+                    printf("Error: You can not give 0 as denominator, assuming 1\n");
+                    num2 = 1;
+                }
+        printf("Enter First Number \n");
+        scanf ("%d",&num1);
+        printf("Enter Second Number \n");
+        scanf ("%d",&num2);
+                res=num1/num2;
+                printf("The QUOTIENT of %d & %d = %d \n",num1,num2,res);
+                break;
+            }
+            case 'm':
+            {
+                if ( num2 == 0 )
+                {
+                    printf("Error: You can not give 0 as denominator, assuming 1\n");
+                    num2 = 1;
+                }
+        printf("Enter First Number \n");
+        scanf ("%d",&num1);
+        printf("Enter Second Number \n");
+        scanf ("%d",&num2);
+                res=num1%num2;
+                printf("The REMAINDER of %d & %d = %d \n",num1,num2,res);
+                break;
+            }
+            case 'p':
+            case 'P':
+            {
+        printf("Enter Base Number \n");
+        scanf ("%d",&num1);
+        printf("Enter Power Number \n");
+        scanf ("%d",&num2);
+                res=pow(num1,num2);
+                printf("%d to the power of %d = %d \n",num1,num2,res);
+                break;
+            }
+            case 'l':
+            case 'L':
+            {
+        printf("Log will be found in base 10 \n Enter Number \n");
+        scanf ("%d",&num1);
+                res=log10(num1);
+                printf("The log %d = %d \n",num1,res);
+                break;
+            }
+
+        
+        
+        
+        
+        
+        }
+        printf("Do you want to exit ? ( y/n )\n");
+        scanf ("%c",&exit);
+        while ( exit != 'y' && exit != 'Y' &&
+                exit != 'n' && exit != 'N' )
+        {
+            scanf ("%c",&exit);
+        }
+    } while ( 'y' != exit );
+    return 0;
+}
